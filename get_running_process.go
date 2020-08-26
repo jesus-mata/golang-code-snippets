@@ -52,6 +52,8 @@ func getProcessRunningStatus(pid int) (*os.Process, error) {
 
 	if err == syscall.ESRCH {
 		return nil, errors.New("process not running")
+	} else {
+		return nil, err
 	}
 
 	// default
