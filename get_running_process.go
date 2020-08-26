@@ -7,7 +7,7 @@ import (
 	"os"
 	"syscall"
 
-	ps "github.com/mitchellh/go-ps"
+	gops "github.com/mitchellh/go-ps"
 )
 
 func main() {
@@ -19,7 +19,7 @@ func main() {
 	}
 	log.Println(process.Pid)
 
-	p, err := ps.FindProcess(pid)
+	p, err := gops.FindProcess(pid)
 
 	if err != nil {
 		fmt.Println("Error : ", err)
